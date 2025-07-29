@@ -3,6 +3,7 @@ import './App.css'
 
 function App() {
 const [value, setValue] = useState('');
+const maxValue = 10;
 
   const handleChange = (e) => {
     let input = e.target.value;
@@ -31,17 +32,32 @@ const [value, setValue] = useState('');
     if (/^\d*\.?\d{0,2}$/.test(input)) {
       setValue(input);
     }
+
+    if (parseFloat(input) > 100000000) input = maxValue;
   };
 
   return (
-    <div>
+    <div className="container">
+    <header>
+      <h1>LevToEuro</h1>
+    </header>
+    <div className='input-wrapper'>
       <input
+        class="input"
         type="text"
         value={value}
         onChange={handleChange}
         placeholder="Цена в Лева"
+        maxLength={maxValue}
       />
-      <p>Цена в Евро: {value ? (parseFloat(value) * 0.511292).toFixed(2) : '—'}</p>
+      <span className="currency-suffix">лв</span>
+      </div>
+      <p>{value ? (parseFloat(value) * 0.511292).toFixed(2) : 'Въведи цена, за да видиш стойност в '}€</p>
+      {value && (
+      <footer>
+        <h3>Курс 1BGN = 0,511292EURO</h3>
+      </footer>
+      )}
     </div>
   );
 }
