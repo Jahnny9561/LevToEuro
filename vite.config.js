@@ -28,8 +28,8 @@ export default defineConfig({
         theme_color: '#ffcc00', // Your app's yellow color
         background_color: '#f2f2f2',
         display: 'standalone',
-        scope: '/',
-        start_url: '/',
+        scope: '/LevToEuro/',
+        start_url: '/LevToEuro/',   
         icons: [
           {
             src: 'pwa-192x192.png', 
