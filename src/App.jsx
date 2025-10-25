@@ -9,7 +9,6 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {/* <img src={logo} alt="LevToEuro Logo" className="logo" /> */}
         <h1>LevToEuro</h1>
         <p>Помощник за преминаване към Евро</p>
       </header>
