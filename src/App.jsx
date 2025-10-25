@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import SimpleConverter from './components/simpleConverter';
-//import ChangeCalculator from './components/ChangeCalculator';
+import ChangeCalculator from './components/ChangeCalculator';
 
 function App() {
   const [mode, setMode] = useState('converter');
