@@ -1,3 +1,4 @@
+/* src/App.css */
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -5,87 +6,58 @@
   text-align: center;
 }
 
-header {
-  text-align: center;
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 90vh;
 }
 
-header h1 {
+.App-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.App-header h1 {
   font-size: 2.2rem;
   margin: 0;
-  color: #004aad;
+  color: #004aad; /* Your blue color */
 }
 
-.container {
-  width: 400px;
-  height: 220px;
-  margin: 0 auto;
-  background-color: #ffcc00;
-  border-radius: 16px;
-  padding: 2rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-  text-align: center;
+.App-header p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-top: 0.25rem;
 }
 
-.rate {
-  margin-bottom: 1rem;
+.App-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.App-nav button {
+  padding: 0.75rem 1.5rem;
   font-size: 1rem;
-  color: #ffffffdb;
-}
-
-input[type="text"] {
-  background-color: #fee5b1;
-  width: 100%;
-  padding: 0.75rem 1rem;
-  color:black;
-  text-align: center;
-  font-size: 1.5rem;
-  border: 1px solid #fee5b1;
-  border-radius: 8px;
-  margin-top: 0.5rem;
-  box-sizing: border-box;
-
-  
-}
-
-input[type="text"]:focus {
-  outline: none;
-  border-color: #fee5b1;
-  box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.2);
-}
-
-p {
-  margin-top: 1.5rem;
-  font-size: 1.5rem;
   font-weight: 500;
-  text-align: center;
+  border: none;
+  background-color: #202020;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.input-wrapper {
-  position: relative;
-  display: inline-block;
+.App-nav button.active {
+  background-color: #004aad;
+  color: white;
+  border-color: #004aad;
 }
 
-.currency-suffix {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
-  color: #888;
-  font-size: 1.5rem;
+.App-nav button:not(.active):hover {
+  background-color: #004aad;
+  border: 1px solid #ccc;
 }
 
-@media (max-width: 480px) {
-  .container {
-    width: auto;
-    height: auto;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem 0.5rem;
-  }
-
-  input {
-    font-size: 1rem;
-  }
-
+main {
+  flex-grow: 1;
 }
