@@ -8,6 +8,7 @@ function ChangeCalculator() {
 
   // State for our result
   const [changeEUR, setChangeEUR] = useState(0); // The final change in EUR (as cents)
+  const [changeBGN, setChangeBGN] = useState(0); // The final change in BGN (as stotinki)
 
   // This helper regex validates input and includes the "fast dot" feature
   const validateInput = (value) => {
@@ -68,6 +69,7 @@ function ChangeCalculator() {
     // 2. Check if we have enough info to calculate
     if (isNaN(priceInEurCents) || isNaN(paidInBgnStotinki) || priceInEurCents <= 0 || paidInBgnStotinki <= 0) {
       setChangeEUR(0);
+      setChangeBGN(0);
       return;
     }
 
@@ -77,8 +79,12 @@ function ChangeCalculator() {
     // 4. Calculate the change in EUR Cents
     const changeInEurCents = paidInEurCents - priceInEurCents;
 
+    // Calculate the change in BGN
+    const resultChangeBgnStotinki = Math.round(changeInEurCents * BGN_TO_EUR_RATE);
+
     // 5. Save the result
     setChangeEUR(changeInEurCents);
+    setChangeBGN(resultChangeBgnStotinki);
   };
 
   // --- Display Logic ---
@@ -133,6 +139,8 @@ function ChangeCalculator() {
         ) : (
           <p className="result-value">
             {formatCents(changeEUR)} €
+            <a> | </a>
+            {formatCents(changeBGN)} лв 
           </p>
         )}
       </div>
