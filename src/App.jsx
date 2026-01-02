@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import SimpleConverter from './components/simpleConverter';
 import ChangeCalculator from './components/ChangeCalculator';
+import InstallButton from './components/installButton';
 
 function App() {
   const [mode, setMode] = useState('converter');
@@ -33,6 +34,7 @@ function App() {
         {mode === 'converter' && <SimpleConverter />}
         {mode === 'change' && <ChangeCalculator />}
       </main>
+      <InstallButton />
     </div>
   );
 }

@@ -2,9 +2,9 @@
 
 .calculator-card {
   width: 100%;
-  max-width: 420px; 
+  max-width: 420px;
   margin: 0 auto;
-  background-color: #ffcc00; 
+  background-color: #ffcc00;
   border-radius: 16px;
   padding: 1.5rem;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
@@ -35,7 +35,7 @@
   padding: 0.75rem 1rem;
   color: black;
   text-align: center;
-  font-size: 1.75rem; 
+  font-size: 1.75rem;
   font-weight: 500;
   border: 1px solid #fee5b1;
   border-radius: 8px;
@@ -72,7 +72,7 @@
 
 .calculator-card .result-value {
   margin-top: 0.5rem;
-  font-size: 2rem; 
+  font-size: 2rem;
   font-weight: 600;
   text-align: center;
   color: #000;
@@ -104,4 +104,23 @@
   .result-value {
     font-size: 2rem;
   }
-}       
+}
+
+.install-button {
+  background-color: #004aad;
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 20px auto;
+  display: block;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.install-button:hover {
+  transform: scale(1.05);
+}
