@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import './App.css';
-import SimpleConverter from './components/simpleConverter';
+import SimpleConverterBGNtoEUR from './components/simpleConverterBGNtoEUR';
 import ChangeCalculator from './components/ChangeCalculator';
 import InstallButton from './components/installButton';
+import SimpleConverterEURtoBGN from './components/simpleConverterEURtoBGN';
 
 function App() {
-  const [mode, setMode] = useState('converter');
+  const [mode, setMode] = useState('converterBGNtoEUR');
 
   return (
     <div className="App">
@@ -16,8 +17,8 @@ function App() {
 
       <nav className="App-nav">
         <button
-          className={mode === 'converter' ? 'active' : ''}
-          onClick={() => setMode('converter')}
+          className={mode === 'converterBGNtoEUR' ? 'active' : ''}
+          onClick={() => setMode('converterBGNtoEUR')}
         >
           Лев ➔ Евро
         </button>
@@ -27,12 +28,19 @@ function App() {
         >
           Калкулатор за Ресто
         </button>
+        <button
+          className={mode === 'converterEURtoBGN' ? 'active' : ''}
+          onClick={() => setMode('converterEURtoBGN')}
+        >
+          Евро ➔ Лев
+        </button>
       </nav>
 
       <main>
         {/* Conditional rendering: Show only the active component */}
-        {mode === 'converter' && <SimpleConverter />}
+        {mode === 'converterBGNtoEUR' && <SimpleConverterBGNtoEUR />}
         {mode === 'change' && <ChangeCalculator />}
+        {mode === 'converterEURtoBGN' && <SimpleConverterEURtoBGN />}
       </main>
       <InstallButton />
     </div>

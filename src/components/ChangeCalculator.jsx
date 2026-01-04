@@ -98,8 +98,8 @@ function ChangeCalculator() {
 
   return (
     <div className="calculator-card">
-      <h2>Калкулатор за Ресто (в Евро)</h2>
-      <p>Цена в Евро, плащане в Лева, ресто в Евро.</p>
+      <h2>Калкулатор за Ресто</h2>
+      <p>Цена в Евро, плащане в Лева, ресто в Евро и Лева.</p>
 
       <div className="input-wrapper">
         <label htmlFor="total-eur">Цена в Евро (EUR)</label>

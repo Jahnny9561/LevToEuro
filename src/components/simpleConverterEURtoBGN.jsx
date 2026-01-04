@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { BGN_TO_EUR_RATE } from '../components/rates';
+import { BGN_TO_EUR_RATE } from './rates';
 import './components.css';
 
-function SimpleConverter() {
+function SimpleConverterEURtoBGN() {
   const [value, setValue] = useState('');
 
   const handleChange = (e) => {
@@ -41,13 +41,13 @@ function SimpleConverter() {
 
   const euroValue =
     value && !isNaN(parseFloat(value))
-      ? (parseFloat(value) / BGN_TO_EUR_RATE).toFixed(2)
+      ? (parseFloat(value) * BGN_TO_EUR_RATE).toFixed(2)
       : '';
 
   return (
     <div className="calculator-card">
-      <h2>Лев ➔ Евро</h2>
-      <p>Въведете сума в лева, за да видите колко е в евро.</p>
+      <h2>Евро ➔ Лев</h2>
+      <p>Въведете сума в Евро, за да видите колко е в Лева.</p>
       
       <div className="input-wrapper">
         <input
@@ -59,13 +59,13 @@ function SimpleConverter() {
           placeholder="0.00"
           maxLength={12}
         />
-        <span className="currency-suffix">лв</span>
+        <span className="currency-suffix">€</span>
       </div>
 
       <div className="result-group">
         <h3>Равно на:</h3>
         <p className="result-value">
-          {euroValue ? euroValue : '0.00'} €
+          {euroValue ? euroValue : '0.00'} лв
         </p>
       </div>
 
@@ -78,4 +78,4 @@ function SimpleConverter() {
   );
 }
 
-export default SimpleConverter;
+export default SimpleConverterEURtoBGN;
